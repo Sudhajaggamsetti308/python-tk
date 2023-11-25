@@ -1,0 +1,62 @@
+def myres():
+    s1=int(sem1_m.get())
+    s2=int(sem2_m.get())
+    s3=int(sem3_m.get())
+    s4=int(sem4_m.get())
+    s5=int(sem5_m.get())
+    s6=int(sem6_m.get())
+    tot=s1+s2+s3+s4+s5+s6
+    avg=tot//6
+    if avg>=90:
+        gr="Outstanding"
+        print("Outstanding")
+    elif avg>=70:
+        gr="First Class"
+    elif avg>=60:
+        gr="Second Class"
+    elif avg>=50:
+        gr="Third Class"
+    else:
+        gr="Fail"
+    s="Total:"+str(tot)+"Grade:"+gr
+    res.config(text=s)
+
+
+
+from tkinter import *
+result=Tk()
+sem1=Label(result,text="Enter SEM1 marks")
+sem1_m=Entry(result)
+sem2=Label(result,text="Enter SEM2 marks")
+sem2_m=Entry(result)
+sem3=Label(result,text="Enter SEM3 marks")
+sem3_m=Entry(result)
+sem4=Label(result,text="Enter SEM4 marks")
+sem4_m=Entry(result)
+sem5=Label(result,text="Enter SEM5 marks")
+sem5_m=Entry(result)
+sem6=Label(result,text="Enter SEM6 marks")
+sem6_m=Entry(result)
+sem1.grid(row=0,column=0, padx=10, pady=10)
+sem1_m.grid(row=0,column=1,padx=10,pady=10)
+
+sem2.grid(row=1,column=0,padx=10,pady=10)
+sem2_m.grid(row=1,column=1,padx=110,pady=10)
+
+sem3.grid(row=2,column=0,padx=10,pady=10)
+sem3_m.grid(row=2,column=1,padx=10,pady=10)
+
+sem4.grid(row=3,column=0,padx=10,pady=10)
+sem4_m.grid(row=3,column=1,padx=10,pady=10)
+
+sem5.grid(row=4,column=0,padx=10,pady=10)
+sem5_m.grid(row=4,column=1,padx=10,pady=10)
+
+sem6.grid(row=5,column=0,padx=10,pady=10)
+sem6_m.grid(row=5,column=1,padx=10,pady=10)
+
+sub=Button(result,text="Submit",command=myres)
+sub.grid(row=6,column=0,pady=10)
+res=Label(result,text="?")
+res.grid(row=6,column=1,padx=10)
+result.mainloop()
